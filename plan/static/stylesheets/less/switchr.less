@@ -1,0 +1,23 @@
+@import "const";
+
+.switch {
+
+    height: 114px;
+    width: 84px;
+
+    display: inline-block;
+
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+
+    cursor: pointer;
+
+    &.on {
+        background-image: url("@{image-root}/switch-on.png");
+    }
+
+    &.off {
+        background-image: url("@{image-root}/switch-off.png");
+    }
+
+}

@@ -1,0 +1,12 @@
+.switch {
+  height: 114px;
+  width: 84px;
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+}
+.switch .on {
+  background-image: url("/static/images/switch-on.png");
+}
+.switch .off {
+  background-image: url("/static/images/switch-off.png");
+}
