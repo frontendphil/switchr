@@ -98,6 +98,26 @@
 
     });
 
+    var Channel = Switch.extend({
+
+        init: function(attrs) {
+            attrs = attrs || {};
+
+            var that = this;
+
+            attrs.click = function() {
+                $.post("/plan/switch/", {
+                    system: attrs.system.getCode().join(""),
+                    channel: attrs.channel,
+                    active: that.active ? "1" : "0"
+                });
+            };
+
+            this._super.call(this, attrs);
+        }
+
+    });
+
     $(document).ready(function() {
 
         var board = new SwitchBoard({
@@ -106,17 +126,26 @@
 
         board.render(".system-code");
 
-        var aChannel = new Switch({
-            click: function() {
-                $.post("/plan/switch/", {
-                    system: board.getCode().join(""),
-                    channel: "1",
-                    active: this.active ? "1" : "0"
-                });
-            }
+        var aChannel = new Channel({
+            channel: "1",
+            system: board
         });
 
         aChannel.render(".plugs");
+
+        var bChannel = new Channel({
+            channel: "2",
+            system: board
+        });
+
+        bChannel.render(".plugs");
+
+        var cChannel = new Channel({
+            channel: "3",
+            system: board
+        });
+
+        cChannel.render(".plugs");
 
     });
 

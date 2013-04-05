@@ -18,7 +18,7 @@ def switch(request):
     channel = request.POST.get("channel")
     active = request.POST.get("active")
 
-    cmd = "echo %s | sudo -S '/usr/bin/send %s %s %s'" % (SYSTEM_PASSWORD, system, channel, active)
+    cmd = "echo %s | sudo -S send %s %s %s" % (SYSTEM_PASSWORD, system, channel, active)
     Popen(cmd, shell=True)
 
     return HttpResponse(status=200)
