@@ -1,4 +1,6 @@
 *.log
+.DS_Store
 *.pot
 *.pyc
+*.css
 local_settings.py
