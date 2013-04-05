@@ -1,0 +1,799 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"mode",
+				"modelview"
+			],
+			[
+				"activa",
+				"activateComponent"
+			],
+			[
+				"fa",
+				"facade"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"back",
+				"background-position"
+			],
+			[
+				"fade",
+				"fadeOut"
+			],
+			[
+				"ana",
+				"animationRunning"
+			],
+			[
+				"emp",
+				"emptyFn"
+			],
+			[
+				"dis",
+				"disableButton"
+			],
+			[
+				"to",
+				"togglePause"
+			],
+			[
+				"run",
+				"runOneStep"
+			],
+			[
+				"register",
+				"registerOnEvent"
+			],
+			[
+				"po",
+				"possibleSteps"
+			],
+			[
+				"next",
+				"nextPossibleSteps"
+			],
+			[
+				"argu",
+				"arguments"
+			],
+			[
+				"ele",
+				"elementId"
+			],
+			[
+				"model",
+				"modelviewer"
+			],
+			[
+				"elem",
+				"elementId"
+			],
+			[
+				"cu",
+				"currentStep"
+			],
+			[
+				"hide",
+				"hideButtons"
+			],
+			[
+				"res",
+				"ressources"
+			],
+			[
+				"no",
+				"nowrap"
+			],
+			[
+				"reg",
+				"registerOnEvent"
+			],
+			[
+				"com",
+				"completed"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"re",
+				"renderTo"
+			],
+			[
+				"pla",
+				"player_id"
+			],
+			[
+				"elemen",
+				"elements"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"cover",
+				"coverage"
+			],
+			[
+				"el",
+				"element"
+			],
+			[
+				"EL",
+				"Element"
+			],
+			[
+				"touch",
+				"touchCount"
+			],
+			[
+				"poin",
+				"pointX"
+			],
+			[
+				"sc",
+				"screenY"
+			],
+			[
+				"ex",
+				"examples"
+			],
+			[
+				"dow",
+				"downloads"
+			],
+			[
+				"font-",
+				"font-style"
+			],
+			[
+				"clo",
+				"close"
+			],
+			[
+				"drop",
+				"drop_table"
+			],
+			[
+				"get",
+				"get_table_name"
+			],
+			[
+				"S",
+				"StorageItem"
+			],
+			[
+				"cl",
+				"classmethod"
+			],
+			[
+				"PRO",
+				"PRODUCTION"
+			],
+			[
+				"ad",
+				"add_incoming_edge"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/User/signavio.sublime-build",
+	"command_palette":
+	{
+		"height": 347.0,
+		"selected_items":
+		[
+			[
+				"log",
+				"SVN: Log"
+			],
+			[
+				"upda",
+				"SVN: Update"
+			],
+			[
+				"simu",
+				"Build: Deploy Simulation"
+			],
+			[
+				"diff",
+				"SVN: Diff"
+			],
+			[
+				"comm",
+				"SVN: Commit…"
+			],
+			[
+				"images",
+				"Build: Deploy Images"
+			],
+			[
+				"commi",
+				"SVN: Commit…"
+			],
+			[
+				"resolve",
+				"SVN: (File) Resolve, Interactive…"
+			],
+			[
+				"update",
+				"SVN: Update"
+			],
+			[
+				"commit",
+				"SVN: Commit…"
+			],
+			[
+				"ismu",
+				"Build: Deploy Simulation"
+			],
+			[
+				"lib",
+				"Build: Build Libs"
+			],
+			[
+				"revert",
+				"SVN: (File) Revert"
+			],
+			[
+				"plat",
+				"Build: Build Platform"
+			],
+			[
+				"ra",
+				"Random Message: Insert Random Message"
+			],
+			[
+				"random",
+				"Random Message: Insert Random Message"
+			],
+			[
+				"rever",
+				"File: Revert"
+			],
+			[
+				"edit",
+				"Build: Build Editor"
+			],
+			[
+				"imag",
+				"Random Message: Insert Random Message"
+			]
+		],
+		"width": 503.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/phil/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/simulationui/src/javascript/plugins/widgets/stepthroughWidget.js",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/simulationui/src/javascript/plugins/functionalPlugins/scenarioManager.js",
+		"/var/folders/5j/lctp2tqj4q99hbn84yh5xsxm0000gn/T/sublime-svn-1365171213/SVN",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/simulationui/data/i18n/translation_de.js",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/simulationui/data/i18n/translation_en_us.js",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/simulationui/src/javascript/plugins/componentPlugins/controlView.js",
+		"/var/folders/5j/lctp2tqj4q99hbn84yh5xsxm0000gn/T/sublime-svn-1365170826/SVN",
+		"/var/folders/5j/lctp2tqj4q99hbn84yh5xsxm0000gn/T/sublime-svn-1365170724/SVN",
+		"/var/folders/5j/lctp2tqj4q99hbn84yh5xsxm0000gn/T/sublime-svn-1365169316/SVN",
+		"/var/folders/5j/lctp2tqj4q99hbn84yh5xsxm0000gn/T/sublime-svn-1365168995/SVN",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/simulationui/src/javascript/plugins/widgets/onecaseWidget.js",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/editor modifications/src/client/scripts/Plugins/academic/experimental/stepThroughPlugin.js",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/simulationui/src/javascript/plugins/widgets/ncaseWidget.js",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/simulationui/src/css/xtheme-specific.css",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/simulationui/src/javascript/plugins/viewPlugins/scenarioView.js",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/libs/lib/utils.js",
+		"/Users/phil/Library/Application Support/Sublime Text 2/Packages/User/signavio.sublime-build",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/simulationui/src/javascript/plugins/componentPlugins/modelView.js",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/simulationui/src/javascript/plugins/componentPlugins/dashboardView.js",
+		"/var/folders/5j/lctp2tqj4q99hbn84yh5xsxm0000gn/T/sublime-svn-1365064907/SVN",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/simulationui/src/javascript/plugins/componentPlugins/stateView.js",
+		"/var/folders/5j/lctp2tqj4q99hbn84yh5xsxm0000gn/T/sublime-svn-1364399463/SVN",
+		"/var/folders/5j/lctp2tqj4q99hbn84yh5xsxm0000gn/T/sublime-svn-1364398691/SVN",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/configuration/simulation.xml",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/stencilsets/processdoctemplate/view/alignment.svg",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/stencilsets/processdoctemplate/processdoctemplate.json",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/editor modifications/src/client/scripts/Plugins/processDocumentation/templateSupport.js",
+		"/var/folders/5j/lctp2tqj4q99hbn84yh5xsxm0000gn/T/sublime-svn-1364389028/SVN",
+		"/var/folders/5j/lctp2tqj4q99hbn84yh5xsxm0000gn/T/sublime-svn-1364387122/SVN",
+		"/Users/phil/Workspace/sketchboard/client/scripts/plugins/note.coffee",
+		"/Users/phil/Workspace/sketchboard/client/scripts/core/facade.coffee",
+		"/Users/phil/Workspace/sketchboard/client/scripts/core/element.coffee",
+		"/Users/phil/Workspace/sketchboard/client/scripts/core/canvas.coffee",
+		"/Users/phil/Workspace/sketchboard/scripts/note.coffee",
+		"/Users/phil/.Trash/sketchboard.html",
+		"/Users/phil/Workspace/sketchboard/note.coffee",
+		"/Users/phil/Workspace/obsolete/sketchboard/static/js/core/element.js",
+		"/Users/phil/Workspace/sketchboard/client/scripts/canvas.coffee",
+		"/Users/phil/Workspace/obsolete/sketchboard/static/js/core/observable.js",
+		"/Users/phil/Workspace/sketchboard/client/stylesheets/less/board.less",
+		"/Users/phil/Workspace/Androrm-Web/androrm/androrm.sublime-project",
+		"/Users/phil/Workspace/process ninja/app/client/process_ninja.js",
+		"/Users/phil/Workspace/process ninja/app/process_ninja.html",
+		"/Users/phil/Workspace/process ninja/app/process_ninja.js",
+		"/Users/phil/Workspace/process ninja/app/process_ninja.css",
+		"/Users/phil/Workspace/process ninja/app/config.js",
+		"/Users/phil/Workspace/process ninja/app/client/process_ninja.css",
+		"/Users/phil/Workspace/process ninja/app/client/process_ninja.html",
+		"/Users/phil/Workspace/todos/client/todos.html",
+		"/Users/phil/Workspace/todos/client/todos.css",
+		"/Users/phil/Workspace/todos/client/todos.js",
+		"/Users/phil/Workspace/process_ninja/process_ninja.html",
+		"/Users/phil/Workspace/Signavio/Trunk/signavio/jstest/resources/qunit.js",
+		"/Users/Phil/Workspace/Androrm-Web/androrm/__init__.py",
+		"/Users/Phil/Workspace/Androrm-Web/androrm/templates/documentation/index.html",
+		"/Users/phil/Workspace/Androrm-Web/androrm/templates/downloads/examples/github.sh",
+		"/Users/Phil/Workspace/Androrm-Web/androrm/templates/documentation/models.html",
+		"/Users/Phil/Workspace/Androrm-Web/androrm/templates/documentation/queries.html",
+		"/Users/Phil/Workspace/Androrm-Web/androrm/templates/base.html",
+		"/Users/Phil/Workspace/Androrm-Web/androrm/media/js/initialize.js",
+		"/Users/Phil/Workspace/Androrm-Web/androrm/scripts/compress.sh",
+		"/Users/Phil/Workspace/Androrm-Web/androrm/scripts/concat.sh",
+		"/Users/Phil/Workspace/Androrm-Web/androrm/media/js/androrm.js",
+		"/Users/Phil/Workspace/Androrm-Web/androrm/media/css/androrm.css",
+		"/Users/Phil/Workspace/Androrm-Web/androrm/templates/documentation/examples/queries/author_with_o2m.java",
+		"/Users/Phil/Workspace/Androrm-Web/androrm/templates/documentation/examples/queries/title_in.java",
+		"/Users/Phil/Workspace/Androrm-Web/androrm/templates/documentation/examples/queries/models.java",
+		"/Users/Phil/Workspace/Androrm-Web/androrm/templates/documentation/get_started.html",
+		"/Users/Phil/Dropbox/TUK2/Paper/abstract.tex",
+		"/Users/Phil/Dropbox/TUK2/Paper/introduction.text",
+		"/Users/Phil/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/Phil/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/Phil/Workspace/rfid/rfid.sublime-project",
+		"/Users/Phil/Workspace/rfid/rfid.st",
+		"/Volumes/External HD/Studium/Vergangene Semester/SoSe 11/Business Activity Monitoring/Paper/introducing_kpis_to_bpmn.tex",
+		"/Users/Phil/Workspace/rfid/rfid/backends/adapter.py",
+		"/Users/Phil/Workspace/rfid/rfid/simulator/model/node.py",
+		"/Users/Phil/Workspace/rfid/.gitignore"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"viewport",
+			"trigger",
+			".\n",
+			"hideButtons",
+			"images",
+			"\\.icon",
+			".icon",
+			"doExplicit",
+			"requestAction",
+			">>>",
+			"hide",
+			"console.log",
+			"onAfter",
+			"\"step\"",
+			"this",
+			"animate",
+			"playTransi",
+			"step.click",
+			"playShapes",
+			"playTransitions",
+			"offerShapes",
+			"playTransitions",
+			"stepReady",
+			"playTrans",
+			"playTransitionsEnd",
+			"regis",
+			"play",
+			"togglePause",
+			"isPause",
+			"isBlocking",
+			"stepReady",
+			"startProcess",
+			"blockStep",
+			"animationRunning",
+			"() ",
+			"onRepeat",
+			"restart",
+			"reset",
+			"reset\"",
+			"reset",
+			"startPr",
+			"doStep",
+			"togglePause",
+			"canvas",
+			"me",
+			"playTransitionsEnd",
+			"playTransitions",
+			"possibleSteps",
+			"doStep",
+			"animate",
+			"playTransitionsEnd",
+			"animate",
+			"playTransitionsEnd",
+			"playTransitions",
+			"animate",
+			"playTrans",
+			"doStep",
+			"that",
+			"timer",
+			"animate",
+			"start = 0",
+			"anaimationRunning",
+			"this.start",
+			"selectOnEdge",
+			"_animate",
+			"animate",
+			"initialized",
+			"playTransitionsEnd",
+			"doStep\\(",
+			"doStep(",
+			"doStep)",
+			"get",
+			"playTransitionsEnd",
+			"doStep(",
+			"click",
+			"offerShapes",
+			"doStep",
+			"doStep\\(\\)",
+			"doStep()",
+			"doStep(",
+			"getNextStep",
+			"offerShapes",
+			"steps",
+			"current",
+			"doStep(",
+			"clic",
+			"doStep",
+			"doGet",
+			"speed",
+			"togglePause",
+			"_animate",
+			"control-view .",
+			"togglePause",
+			"fastForward",
+			"this.pause",
+			"start",
+			"isPause",
+			"togglePause",
+			"drawWidget",
+			"drawWidget:",
+			"drawWidget",
+			"updateCurrent",
+			"execution_DATA_UPDATE",
+			"getRequestParams",
+			"initializeNewRun :",
+			"setTitle",
+			"addMarkers",
+			"superclass",
+			"getCostGrid",
+			"getGrid",
+			"this",
+			"deactivate",
+			"loadMulti",
+			"loadResults",
+			"updateCurrent",
+			"getMarker",
+			"EXECUTION_DATA_UPDATE",
+			"layout.processdoctemplate.header_footer",
+			"handleLayoutHeaderFooter",
+			"page.extended",
+			"page.",
+			"add(",
+			"SHAPEADDED",
+			"_ADDED",
+			"layoutPage:",
+			"layoutHeaderFooter",
+			"handlelayoutPage",
+			"handleLayoutHeaderFooter:"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"dashbo",
+				"simulationui/src/javascript/plugins/componentPlugins/dashboardView.js"
+			],
+			[
+				"state",
+				"simulationui/src/javascript/plugins/componentPlugins/stateView.js"
+			],
+			[
+				"simutrans",
+				"simulationui/data/i18n/translation_en_us.js"
+			],
+			[
+				"contro",
+				"simulationui/src/javascript/plugins/componentPlugins/controlView.js"
+			],
+			[
+				"simuthem",
+				"simulationui/src/css/xtheme-specific.css"
+			],
+			[
+				"onecas",
+				"simulationui/src/javascript/plugins/widgets/onecaseWidget.js"
+			],
+			[
+				"scenariom",
+				"simulationui/src/javascript/plugins/functionalPlugins/scenarioManager.js"
+			],
+			[
+				"step",
+				"simulationui/src/javascript/plugins/widgets/stepthroughWidget.js"
+			],
+			[
+				"stepth",
+				"editor modifications/src/client/scripts/Plugins/academic/experimental/stepThroughPlugin.js"
+			],
+			[
+				"simutheme",
+				"simulationui/src/css/xtheme-specific.css"
+			],
+			[
+				"control",
+				"simulationui/src/javascript/plugins/componentPlugins/controlView.js"
+			],
+			[
+				"utils",
+				"libs/lib/utils.js"
+			],
+			[
+				"onecasewi",
+				"simulationui/src/javascript/plugins/widgets/onecaseWidget.js"
+			],
+			[
+				"scenarioman",
+				"simulationui/src/javascript/plugins/functionalPlugins/scenarioManager.js"
+			],
+			[
+				"dashb",
+				"simulationui/src/javascript/plugins/componentPlugins/dashboardView.js"
+			],
+			[
+				"modevi",
+				"simulationui/src/javascript/plugins/componentPlugins/modelView.js"
+			],
+			[
+				"scenariov",
+				"simulationui/src/javascript/plugins/viewPlugins/scenarioView.js"
+			],
+			[
+				"ncase",
+				"simulationui/src/javascript/plugins/widgets/ncaseWidget.js"
+			],
+			[
+				"stateview",
+				"simulationui/src/javascript/plugins/componentPlugins/stateView.js"
+			],
+			[
+				"simula",
+				"configuration/simulation.xml"
+			],
+			[
+				"procdocsu",
+				"editor modifications/src/client/scripts/Plugins/processDocumentation/templateSupport.js"
+			],
+			[
+				"stencilprocdoc",
+				"stencilsets/processdoctemplate/processdoctemplate.json"
+			],
+			[
+				"stencilalign",
+				"stencilsets/processdoctemplate/view/alignment.svg"
+			],
+			[
+				"scenariovew",
+				"simulationui/src/javascript/plugins/viewPlugins/scenarioView.js"
+			],
+			[
+				"dashboard",
+				"simulationui/src/javascript/plugins/componentPlugins/dashboardView.js"
+			],
+			[
+				"statev",
+				"simulationui/src/javascript/plugins/componentPlugins/stateView.js"
+			],
+			[
+				"simuxthe",
+				"simulationui/src/css/xtheme-specific.css"
+			],
+			[
+				"controlvi",
+				"simulationui/src/javascript/plugins/componentPlugins/controlView.js"
+			],
+			[
+				"canvas",
+				"client/scripts/core/canvas.coffee"
+			],
+			[
+				"ele",
+				"client/scripts/core/element.coffee"
+			],
+			[
+				"board.l",
+				"client/stylesheets/board.less"
+			],
+			[
+				"",
+				"app/process_ninja.js"
+			],
+			[
+				"ninja.js",
+				"app/process_ninja.js"
+			],
+			[
+				"andror",
+				"media/css/androrm.css"
+			],
+			[
+				"base",
+				"templates/base.html"
+			],
+			[
+				"view",
+				"downloads/views.py"
+			],
+			[
+				"set",
+				"settings.py"
+			],
+			[
+				"ada",
+				"rfid/backends/adapter.py"
+			],
+			[
+				"sql",
+				"rfid/backends/sql.py"
+			],
+			[
+				"item",
+				"rfid/simulator/model/item.py"
+			],
+			[
+				"start",
+				"start_sim.py"
+			],
+			[
+				"sett",
+				"rfid/settings.py"
+			],
+			[
+				"no",
+				"rfid/simulator/model/node.py"
+			],
+			[
+				"node",
+				"rfid/simulator/model/node.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/Users/phil/Workspace/Uni/qrc.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 271.0,
+	"status_bar_visible": true
+}
