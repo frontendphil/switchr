@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Switchr</title>
@@ -7,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stylesheets/css/switchr.css" />
 
     <script type="text/javascript" src="{{ STATIC_URL }}js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/lib/jquery.cookie.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/class.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/switchr.js"></script>
@@ -15,16 +17,46 @@
 
     <div class="container">
         <div class="page-header">
-            <h1>Switchr</h1>
+            <h1>
+                Switchr
+                <small>Control Your Home</small>
+                <button class='btn btn-large add-system pull-right'>Add System</button>
+            </h1>
         </div>
-
-        <h3>System Code</h3>
-        <div class="system-code"></div>
-
-
-        <h3>Plug Control</h3>
-        <div class="plugs"></div>
     </div>
+
+
+    <div class='new-system'>
+        <div class='container'>
+            <form action='{% url add_system %}' method='post' class='form form-horizontal'>
+                {% csrf_token %}
+
+                <input type='text' name='name' id='system_name' class='system-name' placeholder='Name...' />
+
+                <div class='system-code' code='00000'>
+                    <p class='lead'>System Code</p>
+                </div>
+
+                <div class='channels'>
+                    <p class='lead'>
+                        Devices
+                        <a href='#' class='btn add-device pull-right' target='channels'>Add Device</a>
+                    </p>
+
+                    <input type='text' placeholder='Device #1' />
+                </div>
+
+                <br />
+
+                <span class='pull-right'>
+                    <a href='#' class='btn btn-cancel btn-large cancel'>Cancel</a>
+                    <a href='#' class='btn btn-primary btn-large add-system'>Submit</a>
+                </span>
+            </form>
+        </div>
+    </div>
+
+    <div class='container systems'></div>
 
 </body>
 </html>

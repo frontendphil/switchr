@@ -20,7 +20,9 @@
         },
 
         render: function(target) {
-            var dom = $("<div class='switch' />");
+            var cls = this.active ? "on" : "off";
+
+            var dom = $("<div class='switch + " + cls + "' />");
             var that = this;
 
             dom.click(function() {
@@ -31,8 +33,6 @@
             this.dom = dom;
 
             $(target).append(dom);
-
-            this.toggle();
         },
 
         on: function() {
@@ -64,18 +64,34 @@
 
             this.switches = [];
 
-            attrs.switches = attrs.switches || 0;
-            attrs.config = attrs.config || {};
+            attrs.code = attrs.code || "";
 
-            this.initSwitches(attrs.switches, attrs.config);
+            this.initSwitches(attrs.code);
         },
 
-        initSwitches: function(count, config) {
-            var i;
-
-            for(i = 0; i < count; i = i + 1) {
-                this.switches.push(new Switch(config));
+        parseCode: function(code, result) {
+            if(!code) {
+                return;
             }
+
+            result = result || [];
+
+            result.push({
+                on: code.slice(0, 1) === "1"
+            });
+
+            this.parseCode(code.slice(1), result);
+
+            return result;
+        },
+
+        initSwitches: function(code) {
+            var configs = this.parseCode(code);
+            var that = this;
+
+            $.each(configs, function() {
+                that.switches.push(new Switch(this));
+            });
         },
 
         render: function(target) {
@@ -98,54 +114,154 @@
 
     });
 
-    var Channel = Switch.extend({
+    var System = Clazz.extend({
 
         init: function(attrs) {
             attrs = attrs || {};
 
+            this.code = new SwitchBoard({
+                code: attrs.code
+            });
+
+            this.name = attrs.name || "";
+            this.channels = $.map(attrs.channels || [], function(channel, index) {
+                return new Channel(channel, index);
+            });
+        },
+
+        render: function(target) {
+            var name = $("<h2>" + this.name + "</h2>");
             var that = this;
 
-            attrs.click = function() {
-                $.post("/plan/switch/", {
-                    system: attrs.system.getCode().join(""),
-                    channel: attrs.channel,
-                    active: that.active ? "1" : "0"
+            target.append(name);
+
+            this.code.render(target);
+
+            $.each(this.channels, function() {
+                var channel = this;
+
+                this.render(target);
+
+                this.dom.click(function() {
+                    $.post("/plan/switch/", {
+                        system: that.code.getCode().join(""),
+                        channel: channel.nr,
+                        active: channel.state()
+                    });
                 });
-            };
+            });
+        }
+
+    });
+
+    var Channel = Switch.extend({
+
+        init: function(attrs, position) {
+            attrs = attrs || {};
+
+            this.nr = position || 0;
 
             this._super.call(this, attrs);
+        },
+
+        state: function() {
+            if(this.active) {
+                return "1";
+            }
+
+            return "0";
         }
 
     });
 
     $(document).ready(function() {
 
-        var board = new SwitchBoard({
-            switches: 5
+        $(".new-system .system-code").each(function() {
+            var system = new SwitchBoard({
+                code: $(this).attr("code")
+            });
+
+            system.render($(this));
+
+            var form = $(".new-system form");
+
+            $(".new-system a.add-system").click(function() {
+                var channels = [];
+
+                $(".new-system .channels input").each(function() {
+                    channels.push($(this).val());
+                });
+
+                $.ajax({
+                    url: form.attr("action"),
+                    type: "POST",
+                    dataType: "json",
+                    data: {
+                        csrfmiddlewaretoken: $.cookie("csrftoken"),
+                        name: form.find("input[name=name]").val(),
+                        code: system.getCode().join(""),
+                        channels: channels
+                    },
+                    success: function() {
+                        $(".new-system").slideUp();
+                    },
+                    error: function(response) {
+                        alert(response.responseText);
+                    }
+                });
+
+                return false;
+            });
+
+            $(".new-system a.cancel").click(function() {
+                $(".new-system").slideUp();
+                $("button.add-system").fadeIn();
+
+                return false;
+            });
         });
 
-        board.render(".system-code");
+        var loading = $("<div class='loading'>loading systems...</div>");
+        loading.hide();
 
-        var aChannel = new Channel({
-            channel: "1",
-            system: board
+        $(".systems").append(loading);
+
+        $.ajax({
+            url: "/plan/systems",
+            dataType: "json",
+            beforeSend: function() {
+                loading.fadeIn();
+            },
+            success: function(systems) {
+                loading.fadeOut();
+
+                $.each(systems, function() {
+                    var container = $("<div class='system'>");
+                    var system = new System(this);
+
+                    system.render(container);
+
+                    $(".systems").append(container);
+                });
+            }
         });
 
-        aChannel.render(".plugs");
+        $("a.add-device").click(function() {
+            var target = $(this).attr("target");
 
-        var bChannel = new Channel({
-            channel: "2",
-            system: board
+            var parent = $(".new-system ." + target);
+            var deviceNumber = parent.children("input").length + 1;
+
+            parent.append($("<input type='text' name='devices' placeholder='Device #" + deviceNumber + "' />"));
+
+            return false;
         });
 
-        bChannel.render(".plugs");
+        $("button.add-system").click(function() {
+            $(".new-system").slideDown();
 
-        var cChannel = new Channel({
-            channel: "3",
-            system: board
+            $(this).fadeOut();
         });
-
-        cChannel.render(".plugs");
 
     });
 

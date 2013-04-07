@@ -1,7 +1,61 @@
 @import "const";
 
+@text-color: #5b5b5b;
+
 body {
     background-image: url("@{image-root}/background.png");
+
+    color: @text-color;
+}
+
+@margin: 20px;
+@shadow-color: rgba(0, 0, 0, 0.1);
+
+h1, h2, h3 {
+    text-shadow: 0 2px 0px rgba(255, 255, 255, 1);
+}
+
+.system-code,
+.channels {
+    margin-top: @margin;
+    margin-bottom: @margin;
+}
+
+.new-system {
+    padding-top: 2 * @margin;
+    padding-bottom: 2 * @margin;
+
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+
+    box-shadow: inset 0 5px 5px @shadow-color, inset 0 -5px 5px @shadow-color;
+
+    background-color: #fff;
+
+    display: none;
+
+    p.lead {
+        padding-bottom: @margin;
+
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .system-name {
+        height: auto;
+        width: 100%;
+
+        font-size: 40px;
+
+        line-height: normal;
+    }
+
+    .channels {
+        input {
+            display: block;
+
+            margin: @margin / 2;
+        }
+    }
 }
 
 .switch {
@@ -24,4 +78,16 @@ body {
         background-image: url("@{image-root}/switch-off.png");
     }
 
+}
+
+.systems {
+    .loading {
+        margin: 50px;
+
+        font-size: 30px;
+        opacity: 0.5;
+
+        text-shadow: 0 2px 0px #fff;
+        text-align: center;
+    }
 }

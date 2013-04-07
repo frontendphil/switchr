@@ -6,5 +6,7 @@ from django.conf.urls import patterns, url
 
 urlpatterns = patterns('plan.views',
     url(r'^$', 'index'),
-    url(r'^switch/$', 'switch')
+    url(r'^switch/$', 'switch'),
+    url(r'^add/$', 'add', name='add_system'),
+    url(r'^systems/$', 'systems'),
 )
