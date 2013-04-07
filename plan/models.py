@@ -21,11 +21,13 @@ class Channel(models.Model):
 
     active = models.BooleanField(default=False)
     name = models.CharField(max_length=255)
+    position = models.IntegerField()
 
     system = models.ForeignKey(System)
 
     def json(self):
         return {
             "name": self.name,
+            "position": self.position,
             "on": self.active
         }

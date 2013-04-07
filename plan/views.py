@@ -41,8 +41,12 @@ def add(request):
         except:
             system = System.objects.create(code=code, name=name)
 
+            position = 1
+
             for channel in channels:
-                Channel.objects.create(system=system, name=channel)
+                Channel.objects.create(system=system, name=channel, position=position)
+
+                position = position + 1
 
     return HttpResponse(json.dumps(system.json()), status=200, mimetype="application/json")
 

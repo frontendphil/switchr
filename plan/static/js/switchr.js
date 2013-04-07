@@ -124,8 +124,8 @@
             });
 
             this.name = attrs.name || "";
-            this.channels = $.map(attrs.channels || [], function(channel, index) {
-                return new Channel(channel, index);
+            this.channels = $.map(attrs.channels || [], function(channel) {
+                return new Channel(channel);
             });
         },
 
@@ -145,7 +145,7 @@
                 this.dom.click(function() {
                     $.post("/plan/switch/", {
                         system: that.code.getCode().join(""),
-                        channel: channel.nr,
+                        channel: channel.position,
                         active: channel.state()
                     });
                 });
@@ -156,10 +156,10 @@
 
     var Channel = Switch.extend({
 
-        init: function(attrs, position) {
+        init: function(attrs) {
             attrs = attrs || {};
 
-            this.nr = position || 0;
+            this.position = attrs.position || 1;
 
             this._super.call(this, attrs);
         },
