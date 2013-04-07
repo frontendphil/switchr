@@ -19,20 +19,29 @@
             }
         },
 
-        render: function(target) {
-            var cls = this.active ? "on" : "off";
-
-            var dom = $("<div class='switch + " + cls + "' />");
+        afterRender: function(parent) {
             var that = this;
 
-            dom.click(function() {
+            parent.find(".switch").click(function() {
                 that.toggle();
                 that.onClick();
             });
+        },
 
-            this.dom = dom;
+        getClass: function () {
+            return this.active ? "on" : "off";
+        },
 
-            $(target).append(dom);
+        renderComponent: function() {
+            return $("<div class='switch " + this.getClass() + "' />");
+        },
+
+        render: function(target) {
+            this.dom = this.renderComponent(target);
+
+            $(target).append(this.dom);
+
+            this.afterRender(target);
         },
 
         on: function() {
@@ -137,10 +146,13 @@
 
             this.code.render(target);
 
+            var channels = $("<div class='channels' />");
+            target.append(channels);
+
             $.each(this.channels, function() {
                 var channel = this;
 
-                this.render(target);
+                this.render(channels);
 
                 this.dom.click(function() {
                     $.post("/plan/switch/", {
@@ -160,6 +172,7 @@
             attrs = attrs || {};
 
             this.position = attrs.position || 1;
+            this.name = attrs.name || "";
 
             this._super.call(this, attrs);
         },
@@ -170,6 +183,16 @@
             }
 
             return "0";
+        },
+
+        renderComponent: function() {
+            var container = $("<div class='channel' />");
+            var name = $("<label>" + this.name + "</label>");
+            var swtch = this._super();
+
+            container.append(name, swtch);
+
+            return container;
         }
 
     });
@@ -202,8 +225,10 @@
                         code: system.getCode().join(""),
                         channels: channels
                     },
-                    success: function() {
-                        $(".new-system").slideUp();
+                    success: function(system) {
+                        $(".new-system").slideUp(function() {
+                            addSystem(system);
+                        });
                     },
                     error: function(response) {
                         alert(response.responseText);
@@ -226,6 +251,17 @@
 
         $(".systems").append(loading);
 
+        var addSystem = function(conf) {
+            var container = $("<div class='system'>");
+            var system = new System(conf);
+
+            system.render(container);
+
+            $(".systems").append(container);
+
+            container.fadeIn();
+        };
+
         $.ajax({
             url: "/plan/systems",
             dataType: "json",
@@ -233,15 +269,10 @@
                 loading.fadeIn();
             },
             success: function(systems) {
-                loading.fadeOut();
-
-                $.each(systems, function() {
-                    var container = $("<div class='system'>");
-                    var system = new System(this);
-
-                    system.render(container);
-
-                    $(".systems").append(container);
+                loading.fadeOut(function() {
+                    $.each(systems, function() {
+                        addSystem(this);
+                    });
                 });
             }
         });

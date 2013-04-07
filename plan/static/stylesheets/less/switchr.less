@@ -81,6 +81,39 @@ h1, h2, h3 {
 }
 
 .systems {
+
+    .system {
+        display: none;
+
+        position: relative;
+
+        .channel {
+            label {
+                float: left;
+                position: relative;
+
+                top: 12px;
+
+                font-size: 20px;
+
+                width: 250px;
+            }
+
+            .switch {
+                width: 111px;
+                height: 54px;
+
+                &.on {
+                    background-image: url("@{image-root}/channel-on.png");
+                }
+
+                &.off {
+                    background-image: url("@{image-root}/channel-off.png");
+                }
+            }
+        }
+    }
+
     .loading {
         margin: 50px;
 
