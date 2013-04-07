@@ -266,6 +266,8 @@
                     success: function(system) {
                         $(".new-system").slideUp(function() {
                             addSystem(system);
+
+                            $("button.add-system").fadeIn();
                         });
                     },
                     error: function(response) {
