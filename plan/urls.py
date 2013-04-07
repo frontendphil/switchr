@@ -9,4 +9,5 @@ urlpatterns = patterns('plan.views',
     url(r'^switch/$', 'switch'),
     url(r'^add/$', 'add', name='add_system'),
     url(r'^systems/$', 'systems'),
+    url(r'^remove/$', 'remove'),
 )

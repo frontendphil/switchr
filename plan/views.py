@@ -2,9 +2,10 @@ import json
 
 from subprocess import Popen
 
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
 from django.http import HttpResponse
 
 from switchr.settings import SYSTEM_PASSWORD
@@ -27,6 +28,7 @@ def switch(request):
     return HttpResponse(status=200)
 
 
+@require_POST
 def add(request):
     code = request.POST.get("code", None)
     channels = request.POST.getlist("channels[]")
@@ -55,3 +57,13 @@ def systems(request):
     systems = [system.json() for system in System.objects.all()]
 
     return HttpResponse(json.dumps(systems), status=200, mimetype="application/json")
+
+
+@require_POST
+def remove(request):
+    code = request.POST.get("code", None)
+    system = get_object_or_404(System, code=code)
+
+    system.delete()
+
+    return HttpResponse(status=200)

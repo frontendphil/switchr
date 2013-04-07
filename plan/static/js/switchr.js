@@ -19,10 +19,10 @@
             }
         },
 
-        afterRender: function(parent) {
+        afterRender: function(me) {
             var that = this;
 
-            parent.find(".switch").click(function() {
+            me.find(".switch").click(function() {
                 that.toggle();
                 that.onClick();
             });
@@ -33,7 +33,7 @@
         },
 
         renderComponent: function() {
-            return $("<div class='switch " + this.getClass() + "' />");
+            return $("<div class='switch-container'><div class='switch " + this.getClass() + "' /></div>");
         },
 
         render: function(target) {
@@ -41,19 +41,19 @@
 
             $(target).append(this.dom);
 
-            this.afterRender(target);
+            this.afterRender(this.dom);
         },
 
         on: function() {
             this.active = true;
 
-            this.dom.removeClass("off").addClass("on");
+            this.dom.find(".switch").removeClass("off").addClass("on");
         },
 
         off: function() {
             this.active = false;
 
-            this.dom.removeClass("on").addClass("off");
+            this.dom.find(".switch").removeClass("on").addClass("off");
         },
 
         getCode: function() {
@@ -138,16 +138,46 @@
             });
         },
 
+        getCode: function() {
+            return this.code.getCode().join("");
+        },
+
         render: function(target) {
-            var name = $("<h2>" + this.name + "</h2>");
+            var system = $("<div class='system' />");
+            var container = $("<div class='container' />");
+
+            system.append(container);
+
             var that = this;
+            var name = $("<h2>" + this.name + "</h2>");
 
-            target.append(name);
+            var remove = $("<a href='#' class='btn pull-right remove'><i class='icon-remove'></i></a>");
+            name.append(remove);
 
-            this.code.render(target);
+            remove.click(function() {
+                $.ajax({
+                    type: "POST",
+                    url: "/plan/remove/",
+                    data: {
+                        csrfmiddlewaretoken: $.cookie("csrftoken"),
+                        code: that.getCode()
+                    },
+                    success: function() {
+                        system.fadeOut(function() {
+                            system.remove();
+                        });
+                    }
+                });
 
-            var channels = $("<div class='channels' />");
-            target.append(channels);
+                return false;
+            });
+
+            container.append(name);
+
+            this.code.render(container);
+
+            var channels = $("<div class='channels well' />");
+            container.append(channels);
 
             $.each(this.channels, function() {
                 var channel = this;
@@ -156,12 +186,15 @@
 
                 this.dom.click(function() {
                     $.post("/plan/switch/", {
-                        system: that.code.getCode().join(""),
+                        system: that.getCode(),
                         channel: channel.position,
                         active: channel.state()
                     });
                 });
             });
+
+            target.append(system);
+            system.fadeIn();
         }
 
     });
@@ -189,8 +222,13 @@
             var container = $("<div class='channel' />");
             var name = $("<label>" + this.name + "</label>");
             var swtch = this._super();
+            var that = this;
 
             container.append(name, swtch);
+
+            name.click(function() {
+                that.toggle();
+            });
 
             return container;
         }
@@ -252,14 +290,9 @@
         $(".systems").append(loading);
 
         var addSystem = function(conf) {
-            var container = $("<div class='system'>");
             var system = new System(conf);
 
-            system.render(container);
-
-            $(".systems").append(container);
-
-            container.fadeIn();
+            system.render($(".systems"));
         };
 
         $.ajax({
@@ -273,6 +306,8 @@
                     $.each(systems, function() {
                         addSystem(this);
                     });
+
+                    loading.remove();
                 });
             }
         });
@@ -283,7 +318,11 @@
             var parent = $(".new-system ." + target);
             var deviceNumber = parent.children("input").length + 1;
 
-            parent.append($("<input type='text' name='devices' placeholder='Device #" + deviceNumber + "' />"));
+            var input = $("<input type='text' name='devices' placeholder='Device #" + deviceNumber + "' />");
+
+            parent.append(input);
+
+            input.focus();
 
             return false;
         });
