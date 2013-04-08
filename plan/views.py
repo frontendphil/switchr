@@ -25,6 +25,10 @@ def switch(request):
     cmd = "echo %s | sudo -S send %s %s %s" % (SYSTEM_PASSWORD, system, channel, active)
     Popen(cmd, shell=True)
 
+    chan = Channel.objects.get(system__code=system, position=channel)
+    chan.active = active == "1"
+    chan.save()
+
     return HttpResponse(status=200)
 
 
