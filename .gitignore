@@ -1,3 +1,4 @@
+./static/
 *.sublime-workspace
 *.log
 .DS_Store

@@ -1,4 +1,4 @@
-#!/bin/sh -f
+#!/bin/bash -f
 
 CURRENT_DIR=$PWD
 
