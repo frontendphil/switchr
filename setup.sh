@@ -13,7 +13,6 @@ error () {
 check () {
     printf "Checking for $1..."
 
-    # [[ "$(which $1 | grep -c $1)" == "1" ]] && return 0 || return 1
     if [ "$(which $1 | grep -c $1)" == "1" ]
     then
         ok
@@ -63,6 +62,17 @@ printf "Initialising database..."
 python manage.py syncdb --noinput > /dev/null
 
 ok
+
+printf "Checking for local settings..."
+
+if [ ! -f $PWD/switchr/local_settings.py ]
+then
+    error
+
+    printf "Make sure you have your local settings setup with a SECRET_KEY and your SYSTEM_PASSWORD\n"
+else
+    ok
+fi
 
 if ( ! check "lessc" )
 then
