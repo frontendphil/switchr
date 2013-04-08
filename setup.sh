@@ -2,10 +2,6 @@
 
 printf "\n\033[1;37mSWITCHR SETUP\033[0m\n\n"
 
-install_less () {
-    npm install -g less
-}
-
 ok () {
     printf "\033[1;32m ok! \033[0m\n"
 }
@@ -45,14 +41,8 @@ abort() {
     printf "\nSORRY, YOU ARE MISSING \033[1;37mESSENTIAL\033[0m COMPONENTS THAT ARE NEEDED. EXITING SETUP...\n"
 }
 
-if ( check "django-admin.py" )
+if ( ! check "django-admin.py" )
 then
-    printf "Initialising database..."
-
-    python manage.py syncdb --noinput > /dev/null
-
-    ok
-else
     if ( install "Django" )
     then
         if ( check "easy_install" )
@@ -68,22 +58,23 @@ else
     fi
 fi
 
+printf "Initialising database..."
+
+python manage.py syncdb --noinput > /dev/null
+
+ok
+
 if ( ! check "lessc" )
 then
     if ( install "lessc" )
     then
-        if ( check "npm" )
+        if ( ! check "npm" )
         then
-            install_less
-        else
             if ( install "npm" )
             then
-
                 if ( check "apt-get" )
                 then
                     apt-get install npm
-
-                    install_less
                 else
                     abort
 
@@ -93,16 +84,18 @@ then
                 exit 1
             fi
         fi
+
+        npm install -g less
     else
         exit 1
     fi
-else
-    printf "Compiling styles..."
-
-    cd $PWD/plan/static/stylesheets/less/ && bash ./compile_styles.sh > /dev/null
-
-    ok
 fi
+
+printf "Compiling styles..."
+
+cd $PWD/plan/static/stylesheets/less/ && bash ./compile_styles.sh > /dev/null
+
+ok
 
 if( ! check "send" )
 then
